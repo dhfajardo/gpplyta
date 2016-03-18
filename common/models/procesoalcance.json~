@@ -22,7 +22,7 @@
       "type": "date"
     },
     "csusuario": {
-      "type": "number"
+      "type": "string"
     },
     "csestado": {
       "type": "number",

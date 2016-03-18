@@ -18,7 +18,7 @@
       "type": "date"
     },
     "csusuario": {
-      "type": "string"
+      "type": "number"
     },
     "csestado": {
       "type": "number",
