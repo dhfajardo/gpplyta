@@ -1,0 +1,49 @@
+{
+  "name": "criteriovalor",
+  "plural": "criteriovalores",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "valor": {
+      "type": "string",
+      "required": true
+    },
+    "comentario": {
+      "type": "string",
+      "required": true
+    },
+    "csfechac": {
+      "type": "date"
+    },
+    "csfecham": {
+      "type": "date"
+    },
+    "csusuario": {
+      "type": "number"
+    },
+    "csestado": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "resultadoplanificados": {
+      "type": "hasMany",
+      "model": "resultadoplanificado",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

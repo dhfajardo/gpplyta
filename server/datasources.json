@@ -1,0 +1,15 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "gppBD": {
+    "host": "localhost",
+    "port": 3306,
+    "database": "gppBD",
+    "password": "dojarfa",
+    "name": "gppBD",
+    "user": "alan",
+    "connector": "mysql"
+  }
+}

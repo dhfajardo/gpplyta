@@ -1,0 +1,14 @@
+module.exports = function(Empleado) {
+Empleado.on('dataSourceAttached', function(obj)
+	{
+		var create = Empleado.create;
+		Empleado.create = function(model,cb)
+		{
+			console.log('hola');
+			model.nombre = "Erika";
+			console.log(model);
+			return create.apply(this,arguments);
+		};
+	});
+
+};

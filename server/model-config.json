@@ -1,0 +1,193 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "sipocentrada": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "sipocsalida": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "sipocproveedor": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "sipoc": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "sipocproceso": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "criteriovalor": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "criteriotipo": {
+    "dataSource": "gppBD",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "resultadoplanificado": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "procesotipo": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "procesorelacion": {
+    "dataSource": "gppBD",
+    "public": false
+  },
+  "procesoalcance": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "indicadorinformacionh": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "indicadorinformacion": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "procesocausaefecto": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "indicadorcalculo": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "indicadorvariable": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "resultadotipo": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "indicadorresultado": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "indicador": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "usuario": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "proceso": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "organizacion": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "mefgravedad": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "mefaparicion": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "mefdeteccion": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "meffalla": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "meffallad": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "mefefecto": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "mefefectod": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "mefcausa": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "mefcausad": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "mefcontrol": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "mefcontrold": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "mefaccion": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "mefalla": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "procesopaso": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "procesorequerimiento": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "mcausaefecto": {
+    "dataSource": "gppBD",
+    "public": true
+  },
+  "empleado": {
+    "dataSource": "gppBD",
+    "public": true
+  }
+}
