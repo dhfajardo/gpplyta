@@ -1,17 +1,24 @@
 var loopback = require('loopback');
 module.exports = function(Sipoc) {
-	Sipoc.on('dataSourceAttached', function(obj)
-	{
-		var create = Sipoc.create;
-		Sipoc.create = function(model,cb)
+	Sipoc.observe('before save', function attibutesUpCrt(ctx, next)
 		{
-			model.csfechac = new Date().toLocaleString();
-			model.csfecham = new Date().toLocaleString();
-			model.csestado = 1;
-			var context = loopback.getCurrentContext();
-			var accessToken = context.get('accessToken');
-			model.csusuario = accessToken.userId;
-			return create.apply(this,arguments);
-		};
-	});
+			if(ctx.instance)
+			{
+				var _date = new Date();
+				ctx.instance.csfecham = _date;
+				ctx.instance.csfechac = _date;
+				ctx.csestado = 1;
+				var context = loopback.getCurrentContext();
+				var accessToken = context.get('accessToken');
+				ctx.instance.csusuario = accessToken.userId;
+			}
+			else
+			{
+				ctx.data.csfecham = new Date();
+				var context = loopback.getCurrentContext();
+				var accessToken = context.get('accessToken');
+				ctx.data.csusuario = accessToken.userId;
+			}
+			next();
+		});
 };

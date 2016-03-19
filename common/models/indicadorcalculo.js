@@ -1,17 +1,26 @@
 var loopback = require('loopback');
 module.exports = function(Indicadorcalculo) {
-	Indicadorcalculo.on('dataSourceAttached', function(obj)
-	{
-		var create = Indicadorcalculo.create;
-		Indicadorcalculo.create = function(model,cb)
+	Indicadorcalculo.observe('before save', function attibutesUpCrt(ctx, next)
 		{
-			model.csfechac = new Date().toLocaleString();
-			model.csfecham = new Date().toLocaleString();
-			model.csestado = 1;
-			var context = loopback.getCurrentContext();
-			var accessToken = context.get('accessToken');
-			model.csusuario = accessToken.userId;
-			return create.apply(this,arguments);
-		};
-	});
+			if(ctx.instance)
+			{
+				var _date = new Date();
+				ctx.instance.csfecham = _date;
+				ctx.instance.csfechac = _date;
+				ctx.csestado = 1;
+				var context = loopback.getCurrentContext();
+				var accessToken = context.get('accessToken');
+				ctx.instance.csusuario = accessToken.userId;
+				//console.log('Creacion de un nuevo Empleado');
+			}
+			else
+			{
+				ctx.data.csfecham = new Date();
+				var context = loopback.getCurrentContext();
+				var accessToken = context.get('accessToken');
+				ctx.data.csusuario = accessToken.userId;
+				//console.log('Actualizacion de un Empleado existente');
+			}
+			next();
+		});
 };
